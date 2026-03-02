@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1 class="text-center mb-4">Find Similar Books</h1>
+
+<div class="row justify-content-center mb-5">
+    <div class="col-md-6">
+        <form action="/recommend_books" method="POST">
+            <input name="user_input" type="text" 
+                   class="form-control form-control-lg mb-3" 
+                   placeholder="Enter a book name..." required>
+            <div class="text-center mt-3">
+                <button class="recommend-btn">Get Recommendations</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% if data %}
+<div class="row d-flex flex-wrap">
+    {% for i in data %}
+    <div class="col-custom">
+        <div class="book-card-recommend text-white">
+            <img src="{{ i[2] }}" class="card-img-top book-img">
+            <div class="card-body text-center p-2">
+                <h5 class="card-title">{{ i[0] }}</h5>
+                <p class="card-text text-muted">{{ i[1] }}</p>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endif %}
+
+{% endblock %}

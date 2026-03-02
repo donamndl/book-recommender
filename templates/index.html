@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1 class="mb-4 text-center">Top 50 Books</h1>
+
+<div class="row d-flex flex-wrap">
+    {% for i in range(book_name|length) %}
+    <div class="col-custom">
+        <div class="book-card-home text-white">
+            <img src="{{ image[i] }}" class="card-img-top book-img">
+            <div class="card-body text-center p-2">
+                <h6 class="card-title fw-bold mb-2" style="min-height: 40px; font-size: 0.95rem;">
+                  {{ book_name[i] }}
+                </h6>
+                <p class="card-text text-muted">{{ author[i] }}</p>
+                <p class="small mb-1">⭐ {{ rating[i] }} | 👍 {{ votes[i] }}</p>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}
