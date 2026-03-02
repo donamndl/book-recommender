@@ -25,3 +25,11 @@ This system recommends books to users based on similarity scores computed using 
 - Scikit-learn
 - Pickle
 - HTML/CSS
+
+---
+
+## 💡 How It Works
+
+- User selects a book.
+- System finds similar books using cosine similarity.
+- Top recommended books are displayed with details.
